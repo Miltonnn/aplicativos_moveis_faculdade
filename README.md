@@ -2,14 +2,12 @@
 
 <h1>Atividade_03</h1>
 
-<p>
-Crie uma base de dados com 50 registros, cada registro deve possuir:
-
-* Nome 
-* Sexo
-* Idade
-* Cargo
-* Salário
+<p>Crie uma base de dados com 50 registros, cada registro deve possuir:</p>
+<p>* Nome</p>
+<p>* Sexo</p>
+<p>* Idade</p>
+<p>* Cargo</p>
+<p>* Salário</p>
 
 Após o cadastro, a aplicação deve exibir:
 * Quem é o homem mais velho
@@ -102,4 +100,4 @@ fun calcularMediaSalarioPorSexo(sexo: String): Double {
 ```
 
 
-</p>
+
