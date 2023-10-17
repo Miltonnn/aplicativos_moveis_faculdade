@@ -4,7 +4,8 @@
 
 <p>
 Crie uma base de dados com 50 registros, cada registro deve possuir:
-* Nome Completo
+
+* Nome 
 * Sexo
 * Idade
 * Cargo
