@@ -3,11 +3,11 @@
 <h1>Atividade_03</h1>
 
 <p>Crie uma base de dados com 50 registros, cada registro deve possuir:</p>
-<p>* Nome</p>
-<p>* Sexo</p>
-<p>* Idade</p>
-<p>* Cargo</p>
-<p>* Salário</p>
+* Nome
+* Sexo
+* Idade
+* Cargo
+* Salário
 
 Após o cadastro, a aplicação deve exibir:
 * Quem é o homem mais velho
