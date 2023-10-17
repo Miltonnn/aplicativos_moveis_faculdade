@@ -1,7 +1,7 @@
 # Aplicativos_moveis_unicsul
 
 <h1>Atividade_03</h1>
-
+<p>
 Crie uma base de dados com 50 registros, cada registro deve possuir:
 * Nome
 * Sexo
@@ -100,4 +100,4 @@ fun calcularMediaSalarioPorSexo(sexo: String): Double {
 ```
 
 
-
+</p>
