@@ -3,8 +3,9 @@
 <h1>Atividade_03</h1>
 <p>
 Crie uma base de dados com 50 registros, cada registro deve possuir:
-        
-* Nome
+
+<p>* Nome</p>        
+
 * Sexo
 * Idade
 * Cargo
