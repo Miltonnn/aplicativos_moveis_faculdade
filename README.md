@@ -44,4 +44,62 @@ fun encontrarMaiorSalarioPorSexo(sexo: String): Pessoa? {
         return pessoasDoSexo.maxByOrNull { it.salario }
     }
 ```
+
+## Função que calcula quem tem o menor salário por sexo
+
+```kotlin
+fun encontrarMenorSalarioPorSexo(sexo: String): Pessoa? {
+        val pessoasDoSexo = pessoas.filter { it.sexo == sexo }
+        return pessoasDoSexo.minByOrNull { it.salario }
+    }
+```
+
+## Função que calcula a média de salários por sexo
+
+```kotlin
+fun calcularMediaSalarioPorSexo(sexo: String): Double {
+        val pessoasDoSexo = pessoas.filter { it.sexo == sexo }
+        val totalSalarios = pessoasDoSexo.sumByDouble { it.salario }
+        return if (pessoasDoSexo.isNotEmpty()) totalSalarios / pessoasDoSexo.size else 0.0
+    }
+```
+
+## Função que encontra a pessoa com o cargo "Diretor" que possui o maior salário
+
+```kotlin
+ fun encontrarDiretorComMaiorSalario(): Pessoa? {
+        return pessoas.filter { it.profissao == "Diretor" }.maxByOrNull { it.salario }
+    }
+```
+
+## Função que encontra a pessoa com o maior nome na empresa
+```kotlin
+ fun encontrarPessoaComMaiorNome(): Pessoa? {
+        return pessoas.maxByOrNull { it.nome.length }
+    }
+```
+
+## Função que todas as pessoas que tem 18 anos
+```kotlin
+ fun mostrarPessoasCom18Anos(pessoas: Array<Pessoa>) {
+        val pessoasCom18Anos = pessoas.filter { it.idade == 18 }
+        if (pessoasCom18Anos.isNotEmpty()) {
+            println("Pessoas com 18 anos:")
+            for (pessoa in pessoasCom18Anos) {
+                println("${pessoa.nome} - Idade: ${pessoa.idade}")
+            }
+        } else {
+            println("Nenhuma pessoa com 18 anos encontrada.")
+        }
+    }
+```
+
+## Função que encontra as pessoas com nome iniciado em "A"
+```kotlin
+ fun encontrarPessoasComNomeIniciadoEmA(): List<Pessoa> {
+        return pessoas.filter { it.nome.startsWith("A", ignoreCase = true) }
+    }
+```
+
+
 </p>
