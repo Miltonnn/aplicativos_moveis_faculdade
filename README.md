@@ -35,7 +35,7 @@ Após o cadastro, a aplicação deve exibir:
 * Quem são as pessoas que possuem 18 anos
 * Quem são as pessoas que tem o nome iniciado em “A”
 
-## Função que calcula quem tem o maior salário por sexo
+<p> Função que calcula quem tem o maior salário por sexo</p>
 
 ```kotlin
 fun encontrarMaiorSalarioPorSexo(sexo: String): Pessoa? {
@@ -44,7 +44,7 @@ fun encontrarMaiorSalarioPorSexo(sexo: String): Pessoa? {
     }
 ```
 
-## Função que calcula quem tem o menor salário por sexo
+<p> Função que calcula quem tem o menor salário por sexo</p>
 
 ```kotlin
 fun encontrarMenorSalarioPorSexo(sexo: String): Pessoa? {
@@ -53,7 +53,7 @@ fun encontrarMenorSalarioPorSexo(sexo: String): Pessoa? {
     }
 ```
 
-## Função que calcula a média de salários por sexo
+<p> Função que calcula a média de salários por sexo</p>
 
 ```kotlin
 fun calcularMediaSalarioPorSexo(sexo: String): Double {
@@ -63,7 +63,7 @@ fun calcularMediaSalarioPorSexo(sexo: String): Double {
     }
 ```
 
-## Função que encontra a pessoa com o cargo "Diretor" que possui o maior salário
+<p> Função que encontra a pessoa com o cargo "Diretor" que possui o maior salário</p>
 
 ```kotlin
  fun encontrarDiretorComMaiorSalario(): Pessoa? {
@@ -71,14 +71,16 @@ fun calcularMediaSalarioPorSexo(sexo: String): Double {
     }
 ```
 
-## Função que encontra a pessoa com o maior nome na empresa
+<p> Função que encontra a pessoa com o maior nome na empresa</p>
+
 ```kotlin
  fun encontrarPessoaComMaiorNome(): Pessoa? {
         return pessoas.maxByOrNull { it.nome.length }
     }
 ```
 
-## Função que todas as pessoas que tem 18 anos
+<p> Função que todas as pessoas que tem 18 anos</p>
+
 ```kotlin
  fun mostrarPessoasCom18Anos(pessoas: Array<Pessoa>) {
         val pessoasCom18Anos = pessoas.filter { it.idade == 18 }
@@ -93,7 +95,8 @@ fun calcularMediaSalarioPorSexo(sexo: String): Double {
     }
 ```
 
-## Função que encontra as pessoas com nome iniciado em "A"
+<p> Função que encontra as pessoas com nome iniciado em "A"</p>
+
 ```kotlin
  fun encontrarPessoasComNomeIniciadoEmA(): List<Pessoa> {
         return pessoas.filter { it.nome.startsWith("A", ignoreCase = true) }
