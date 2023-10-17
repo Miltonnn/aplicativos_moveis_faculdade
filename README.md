@@ -35,4 +35,13 @@ Após o cadastro, a aplicação deve exibir:
 * Quem é a pessoa que tem o maior nome na empresa
 * Quem são as pessoas que possuem 18 anos
 * Quem são as pessoas que tem o nome iniciado em “A”
+
+## Função que calcula quem tem o maior salário por sexo
+
+```kotlin
+fun encontrarMaiorSalarioPorSexo(sexo: String): Pessoa? {
+        val pessoasDoSexo = pessoas.filter { it.sexo == sexo }
+        return pessoasDoSexo.maxByOrNull { it.salario }
+    }
+```
 </p>
