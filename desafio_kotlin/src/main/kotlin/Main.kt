@@ -22,12 +22,12 @@ fun main() {
         Pessoa("Diego", "Técnico de Suporte", 48000.0, "Masculino", 25),
         Pessoa("Larissa", "Designer de Interiores", 60000.0, "Feminino", 27),
         Pessoa("André", "Gestor de Logística", 71000.0, "Masculino", 35),
-        Pessoa("Patrícia", "Jornalista", 55000.0, "Feminino", 30),
+        Pessoa("Patrícia", "Diretor", 55000.0, "Feminino", 30),
         Pessoa("Miguel", "Chef de Cozinha", 58000.0, "Masculino", 32),
         Pessoa("Clara", "Engenheira de Som", 70000.0, "Feminino", 34),
         Pessoa("Alex", "Técnico de Laboratório", 48000.0, "Masculino", 26),
         Pessoa("Eduarda", "Artista 3D", 65000.0, "Feminino", 28),
-        Pessoa("Roberto", "Piloto de Testes", 90000.0, "Masculino", 40),
+        Pessoa("Roberto", "Diretor", 90000.0, "Masculino", 40),
         Pessoa("Vanessa", "Analista de Marketing", 58000.0, "Feminino", 31),
         Pessoa("Marcos", "Operador de Máquinas", 52000.0, "Masculino", 37),
         Pessoa("Cintia", "Gerente de Recursos Humanos", 76000.0, "Feminino", 38),
@@ -83,7 +83,8 @@ fun main() {
 
     // Função que encontra a pessoa com o cargo "Diretor" que possui o maior salário
     fun encontrarDiretorComMaiorSalario(): Pessoa? {
-        return pessoas.filter { it.profissao == "Diretor" }.maxByOrNull { it.salario }
+        val diretores = pessoas.filter { it.profissao == "Diretor" }
+        return diretores.maxByOrNull { it.salario }
     }
 
     // Função que encontra a pessoa com o maior nome na empresa
@@ -103,12 +104,48 @@ fun main() {
         }
     }
 
-
     // Função que encontra as pessoas com nome iniciado em "A"
     fun encontrarPessoasComNomeIniciadoEmA(): List<Pessoa> {
         return pessoas.filter { it.nome.startsWith("A", ignoreCase = true) }
     }
 
+    // Funções para encontrar o homem mais velho, a mulher mais velha, o homem mais novo e a mulher mais nova
+    fun encontrarHomemMaisVelho(pessoas: Array<Pessoa>): Pessoa? {
+        val homens = pessoas.filter { it.sexo.equals("Masculino", ignoreCase = true) }
+        if (homens.isNotEmpty()) {
+            return homens.maxByOrNull { it.idade }
+        }
+        return null
+    }
+
+    fun encontrarMulherMaisVelha(pessoas: Array<Pessoa>): Pessoa? {
+        val mulheres = pessoas.filter { it.sexo.equals("Feminino", ignoreCase = true) }
+        if (mulheres.isNotEmpty()) {
+            return mulheres.maxByOrNull { it.idade }
+        }
+        return null
+    }
+
+    fun encontrarHomemMaisNovo(pessoas: Array<Pessoa>): Pessoa? {
+        val homens = pessoas.filter { it.sexo.equals("Masculino", ignoreCase = true) }
+        if (homens.isNotEmpty()) {
+            return homens.minByOrNull { it.idade }
+        }
+        return null
+    }
+
+    fun encontrarMulherMaisNova(pessoas: Array<Pessoa>): Pessoa? {
+        val mulheres = pessoas.filter { it.sexo.equals("Feminino", ignoreCase = true) }
+        if (mulheres.isNotEmpty()) {
+            return mulheres.minByOrNull { it.idade }
+        }
+        return null
+    }
+
+    val homemMaisVelho = encontrarHomemMaisVelho(pessoas)
+    val mulherMaisVelha = encontrarMulherMaisVelha(pessoas)
+    val homemMaisNovo = encontrarHomemMaisNovo(pessoas)
+    val mulherMaisNova = encontrarMulherMaisNova(pessoas)
     val diretorComMaiorSalario = encontrarDiretorComMaiorSalario()
     val pessoaComMaiorNome = encontrarPessoaComMaiorNome()
     val pessoasComNomeIniciadoEmA = encontrarPessoasComNomeIniciadoEmA()
@@ -120,18 +157,20 @@ fun main() {
     val mediaSalarioMulheres = calcularMediaSalarioPorSexo("Feminino")
     val mediaSalarioTotal = calcularMediaSalarioPorSexo("Masculino") + calcularMediaSalarioPorSexo("Feminino")
 
-
     println("Homem com o maior salário:  ${homemComMaiorSalario?.nome}")
     println("Homem com o menor salário:  ${homemComMenorSalario?.nome}")
     println("Mulher com o maior salário:  ${mulherComMaiorSalario?.nome}")
     println("Mulher com o menor salário:  ${mulherComMenorSalario?.nome}")
     println("Média dos salários dos homens: R$ $mediaSalarioHomens")
     println("Média dos salários das mulheres: R$ $mediaSalarioMulheres")
-    println("Média dos salários independente do sexo: R$ ${mediaSalarioTotal / (pessoas.size)}")
+    println("Média dos salários independente do sexo: R$ ${mediaSalarioTotal / pessoas.size}")
     println("Diretor com o maior salário: ${diretorComMaiorSalario?.nome}")
     println("Pessoa com o maior nome na empresa: ${pessoaComMaiorNome?.nome}")
     mostrarPessoasCom18Anos(pessoas)
     println("Pessoas com nome iniciado em 'A':")
     pessoasComNomeIniciadoEmA.forEach { println(it.nome) }
+    println("Homem mais velho: ${homemMaisVelho?.nome}, Idade: ${homemMaisVelho?.idade}")
+    println("Mulher mais velha: ${mulherMaisVelha?.nome}, Idade: ${mulherMaisVelha?.idade}")
+    println("Homem mais novo: ${homemMaisNovo?.nome}, Idade: ${homemMaisNovo?.idade}")
+    println("Mulher mais nova: ${mulherMaisNova?.nome}, Idade: ${mulherMaisNova?.idade}")
 }
-
